@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ContentFilters</key>
+	<dict/>
+	<key>auto_connect</key>
+	<true/>
+	<key>data</key>
+	<dict>
+		<key>connection</key>
+		<dict>
+			<key>database</key>
+			<string>world</string>
+			<key>host</key>
+			<string>13.209.134.15</string>
+			<key>kcid</key>
+			<string>8598774615916392323</string>
+			<key>name</key>
+			<string>DSS</string>
+			<key>rdbms_type</key>
+			<string>mysql</string>
+			<key>sslCACertFileLocation</key>
+			<string></string>
+			<key>sslCACertFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslCertificateFileLocation</key>
+			<string></string>
+			<key>sslCertificateFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslKeyFileLocation</key>
+			<string></string>
+			<key>sslKeyFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>type</key>
+			<string>SPTCPIPConnection</string>
+			<key>useSSL</key>
+			<integer>0</integer>
+			<key>user</key>
+			<string>root</string>
+		</dict>
+		<key>session</key>
+		<dict>
+			<key>connectionEncoding</key>
+			<string>utf8mb4</string>
+			<key>contentFilter</key>
+			<dict/>
+			<key>contentPageNumber</key>
+			<integer>1</integer>
+			<key>contentSelection</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0
+			b3BYJG9iamVjdHMSAAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRk
+			YXRhgAGtCwwZGhscHSEoLDA1OlUkbnVsbNMNDg8QFBhXTlMua2V5
+			c1pOUy5vYmplY3RzViRjbGFzc6MREhOAAoADgASjFRYXgAWABoAI
+			gAxUdHlwZVRyb3dzVGtleXNfECZTZWxlY3Rpb25EZXRhaWxUeXBl
+			UHJpbWFyeUtleWVkRGV0YWlsc9MNDg8eHyCgoIAH0iIjJCVaJGNs
+			YXNzbmFtZVgkY2xhc3Nlc18QE05TTXV0YWJsZURpY3Rpb25hcnmj
+			JCYnXE5TRGljdGlvbmFyeVhOU09iamVjdNIODykroSqACYAL0g8t
+			Li9ZTlMuc3RyaW5ngApUQ29kZdIiIzEyXxAPTlNNdXRhYmxlU3Ry
+			aW5nozEzNFhOU1N0cmluZ1hOU09iamVjdNIiIzY3Xk5TTXV0YWJs
+			ZUFycmF5ozY4OVdOU0FycmF5WE5TT2JqZWN00iIjJjuiJjxYTlNP
+			YmplY3QACAARABoAJAApADIANwBJAEwAUQBTAGEAZwBuAHYAgQCI
+			AIwAjgCQAJIAlgCYAJoAnACeAKMAqACtANYA3QDeAN8A4QDmAPEA
+			+gEQARQBIQEqAS8BMQEzATUBOgFEAUYBSwFQAWIBZgFvAXgBfQGM
+			AZABmAGhAaYBqQAAAAAAAAIBAAAAAAAAAD0AAAAAAAAAAAAAAAAA
+			AAGy
+			</data>
+			<key>contentSortCol</key>
+			<string>Region</string>
+			<key>contentSortColIsAsc</key>
+			<true/>
+			<key>contentViewport</key>
+			<string>{{0, 0}, {1226, 663}}</string>
+			<key>isToolbarVisible</key>
+			<true/>
+			<key>queries</key>
+			<string># city 테이블에서 나라별 도시의 갯수를 출력
+select CountryCode, count(CountryCode) as count
+from city
+group by CountryCode;
+
+# countrylanguage  테이블에서 전체 언어의 갯수를 출력
+select count(distinct(language))
+from countrylanguage;
+
+# 대륙별 인구수와 GNP의 최대값을 출력 
+Select continent, sum(population), sum(GNP), sum(GNP)/sum(population)
+from country
+group by continent;
+
+# 대륙별 전체인구수를 구하고 5억 이상인 대륙만 출력
+# Having : group by가 실행되고 난 결과에 대해 조건을 추가
+select continent, sum(population) as data
+from country
+group by continent
+
+
+having data &gt; 500000000;</string>
+			<key>table</key>
+			<string>country</string>
+			<key>view</key>
+			<string>SP_VIEW_CUSTOMQUERY</string>
+			<key>windowVerticalDividerPosition</key>
+			<real>214</real>
+		</dict>
+	</dict>
+	<key>encrypted</key>
+	<false/>
+	<key>format</key>
+	<string>connection</string>
+	<key>queryFavorites</key>
+	<array/>
+	<key>queryHistory</key>
+	<array>
+		<string># 대륙별 인구수와 GNP의 최대값을 출력 
+Select continent, sum(population), sum(GNP), sum(GNP)/sum(population)
+from country
+group by continent</string>
+		<string># 대륙별 인구수와 GNP의 최대값을 출력 
+Select continent, max(population), max(GNP)
+from country
+group by continent</string>
+		<string># 대륙별 인구수와 GNP의 최대값을 출력 
+Select continent, name, max(population), max(GNP)
+from country
+group by continent</string>
+		<string># 대륙별 인구수와 GNP의 최대값을 출력 
+Select continent, max(population), max(GNP)
+from Country
+group by continent</string>
+		<string># countrylanguage  테이블에서 전체 언어의 갯수를 출력
+select count(distinct(language))
+from countrylanguage</string>
+		<string># countrylanguage  테이블에서 전체 언어의 갯수를 출력
+select distinct(language)
+from countrylanguage</string>
+		<string># countrylanguage  테이블에서 전체 언어의 갯수를 출력
+select distict(language)
+from countrylanguage</string>
+		<string># countrylanguage  테이블에서 전체 언어의 갯수를 출력
+select language
+from countrylanguage</string>
+		<string># city 테이블에서 나라별 도시의 갯수를 출력
+select CountryCode, count(CountryCode) as count
+from city
+group by CountryCode</string>
+		<string># 6. country 테이블에서 Code가 A로 시작하고 GovernmentForm에 Republic이 포함되는 데이터를 아래와 같이 조회하세요.
+SELECT Code, Name, Continent, GovernmentForm, Population
+FROM country
+where Code Like "a%" and GovernmentForm Like "%Republic%"</string>
+		<string># 6. country 테이블에서 Code가 A로 시작하고 GovernmentForm에 Republic이 포함되는 데이터를 아래와 같이 조회하세요.
+SELECT Code, Name, Continent, GovernmentForm, Population
+FROM country
+where Code Like "a%"</string>
+		<string># 6. country 테이블에서 Code가 A로 시작하고 GovernmentForm에 Republic이 포함되는 데이터를 아래와 같이 조회하세요.
+SELECT Code, Name, Continent, GovernmentForm, Population
+FROM country
+where Code = "a"%</string>
+		<string># 6. country 테이블에서 Code가 A로 시작하고 GovernmentForm에 Republic이 포함되는 데이터를 아래와 같이 조회하세요.
+SELECT Code, Name, Continent, GovernmentForm, Population
+FROM country
+where Code = "a%"</string>
+		<string># 6. country 테이블에서 Code가 A로 시작하고 GovernmentForm에 Republic이 포함되는 데이터를 아래와 같이 조회하세요.
+SELECT Code, Name, Continent, GovernmentForm, Population
+FROM country
+where Code = "alb"</string>
+		<string># 6. country 테이블에서 Code가 A로 시작하고 GovernmentForm에 Republic이 포함되는 데이터를 아래와 같이 조회하세요.
+SELECT Code, Name, Continent, GovernmentForm, Population
+FROM country
+where Code = "A%"</string>
+		<string># 6. country 테이블에서 Code가 A로 시작하고 GovernmentForm에 Republic이 포함되는 데이터를 아래와 같이 조회하세요.
+SELECT Code, Name, Continent, GovernmentForm, Population
+FROM country</string>
+		<string># 6. country 테이블에서 Code가 A로 시작하고 GovernmentForm에 Republic이 포함되는 데이터를 아래와 같이 조회하세요.
+SELECT Code, Name, Continent, GovernmentForm, Population
+FROM country
+where code = "A%"</string>
+		<string># 6. country 테이블에서 Code가 A로 시작하고 GovernmentForm에 Republic이 포함되는 데이터를 아래와 같이 조회하세요.
+SELECT code, name, continent, GovernmentForm, Population
+FROM country
+where code = "A%"</string>
+		<string># 6. country 테이블에서 Code가 A로 시작하고 GovernmentForm에 Republic이 포함되는 데이터를 아래와 같이 조회하세요.
+SELECT code, name, continent, GovernmentForm, Population
+FROM country
+where code = "A%" and GovernmentForm = "%Republic%"</string>
+		<string># 6. country 테이블에서 Code가 A로 시작하고 GovernmentForm에 Republic이 포함되는 데이터를 아래와 같이 조회하세요.
+SELECT *
+FROM country</string>
+	</array>
+	<key>rdbms_type</key>
+	<string>mysql</string>
+	<key>rdbms_version</key>
+	<string>5.7.31-0ubuntu0.18.04.1</string>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>
